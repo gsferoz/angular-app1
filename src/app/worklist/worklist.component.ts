@@ -33,7 +33,7 @@ export class WorklistComponent {
 
 onRowClicked(row)
 {
-  console.log(row);
+  console.log(row);//new change
   this.rowClickedFlag = true;
   this.name = row.name;
 }
