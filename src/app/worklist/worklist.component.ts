@@ -26,6 +26,14 @@ export class WorklistComponent {
     this.dataSource = new MatTableDataSource(users);
 
 
+<<<<<<< HEAD
+=======
+onRowClicked(row)
+{
+  console.log(row);//new change
+  this.rowClickedFlag = true;
+  this.name = row.name;
+>>>>>>> 1a35bf56ed4a49ec0c84a0d07984b20b6eab1f24
 }
 
 
