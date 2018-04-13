@@ -11,7 +11,7 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class WorklistComponent {
 
-  rowClickedFlag:boolean=false;
+  rowClickedFlag:boolean=false; //flag for row clicked
   name:any;
 
   displayedColumns = ['id', 'name', 'progress', 'color'];
@@ -28,15 +28,10 @@ export class WorklistComponent {
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
 
- 
+
 }
 
-onRowClicked(row)
-{
-  console.log(row);//new change
-  this.rowClickedFlag = true;
-  this.name = row.name;
-}
+
 
 ngAfterViewInit() {
   this.dataSource.paginator = this.paginator;
@@ -52,16 +47,16 @@ applyFilter(filterValue: string) {
 
 /** Builds and returns a new User. */
 function createNewUser(id: number): UserData {
-const name =
+  const name =
     NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
     NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
 
-return {
+ return {
   id: id.toString(),
   name: name,
   progress: Math.round(Math.random() * 100).toString(),
   color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-};
+ };
 }
 
 /** Constants used to fill up our data base. */
@@ -72,8 +67,8 @@ const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
 
 export interface UserData {
-id: string;
-name: string;
-progress: string;
-color: string;
+  id: string;
+  name: string;
+  progress: string;
+  color: string;
 }
