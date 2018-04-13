@@ -11,6 +11,9 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class WorklistComponent {
 
+  rowClickedFlag:boolean=false;
+  name:any;
+
   displayedColumns = ['id', 'name', 'progress', 'color'];
   dataSource: MatTableDataSource<UserData>;
 
@@ -25,10 +28,15 @@ export class WorklistComponent {
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
 
-
+ 
 }
 
-
+onRowClicked(row)
+{
+  console.log(row);
+  this.rowClickedFlag = true;
+  this.name = row.name;
+}
 
 ngAfterViewInit() {
   this.dataSource.paginator = this.paginator;
