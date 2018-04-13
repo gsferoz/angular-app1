@@ -19,7 +19,12 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} 
+
+
+          <ng-container *ngIf="rowClickedFlag && row.name==name"><div style="background-color:black; color:white">{{name}}</div></ng-container>
+
+      </mat-cell>
     </ng-container>
 
 

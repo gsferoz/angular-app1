@@ -30,7 +30,11 @@ export class WorklistComponent {
 
 
 }
-
+onRowClicked(row){
+  console.log(row);
+  this.rowClickedFlag = true;
+  this.name = row.name;
+}
 
 
 ngAfterViewInit() {
