@@ -11,9 +11,12 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class WorklistComponent {
 
+<<<<<<< HEAD
   rowClickedFlag:boolean=false; //flag for row clicked
   name:any;
 
+=======
+>>>>>>> e2fd671ffe0a42202997631c792d6bec82138cd6
   displayedColumns = ['id', 'name', 'progress', 'color'];
   dataSource: MatTableDataSource<UserData>;
 
