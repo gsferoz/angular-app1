@@ -22,7 +22,10 @@
       <mat-cell *matCellDef="let row"> {{row.name}} 
 
 
-          <ng-container *ngIf="rowClickedFlag && row.name==name"><div style="background-color:black; color:white">{{name}}</div></ng-container>
+          <ng-container *ngIf="rowClickedFlag && row.name==name">
+
+            <app-worlist-slide-content1 [name]="name"></app-worlist-slide-content1>
+          </ng-container>
 
       </mat-cell>
     </ng-container>
